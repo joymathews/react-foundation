@@ -6,14 +6,21 @@
         <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
         <script type="text/jsx">
             const app =document.getElementById('app');
-            function Header() {
-                return (<h1>Develop. Preview. Ship</h1>)
+            function Header({title}) {
+                console.log(title);
+                return (<h1>{title? title : 'Default String'}</h1>);
             }
 
             function HomePage() {
-                return <div><Header/></div>
+                return (
+                <div>
+                <Header title="React"/>
+                <Header tle="React"/>
+                <Header title="Next"/>
+                </div>
+                );
             }
-            ReactDOM.render(<HomePage/>,app)
+            ReactDOM.render(<HomePage/>,app);
         </script>
     </body>
 </html>
