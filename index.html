@@ -6,6 +6,8 @@
         <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
         <script type="text/jsx">
             const app =document.getElementById('app');
+            
+
             function Header({title}) {
                 console.log(title);
                 return (<h1>{title? title : 'Default String'}</h1>);
@@ -13,6 +15,11 @@
 
             function HomePage() {
                 const names = ["Geeta","Sita","Manu","Ravi"]
+                const [likes,setLikes] = React.useState(0);
+                function handleClick(){
+                    setLikes(likes + 1);
+                    console.log(likes)
+                }
                 return (
                 <div>
                 <Header title="Develop Preview Ship"/>
@@ -24,6 +31,7 @@
                     )
                     )}
                 </ul>
+                <button onClick={handleClick}>Like</button>
                 </div>
                 );
             }
